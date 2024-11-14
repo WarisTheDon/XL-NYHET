@@ -2,7 +2,8 @@
 
 /* Soft, understated background for a professional reading experience */
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Georgia", serif; /* Elegant serif font for a classic look */
+  font-weight: 400; /* Normal weight for a balanced look */
   font-size: 21px;
   margin: 0 auto;
   width: 60vh;
@@ -99,7 +100,7 @@ header {
   text-align: center;
   color: #2c3e50;
   backdrop-filter: blur(8px); /* Blurred background for a glass-like effect */
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -111,8 +112,8 @@ header {
 
 /* Profile image styling */
 .profile-image {
-  width: 130px;
-  height: 130px;
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
   margin-top: 30px;
   object-fit: cover;
@@ -158,7 +159,8 @@ header {
   max-width: 600px;
   text-align: center;
   margin-top: 20px;
-  padding-top: 1rem;
+  padding-bottom: 8rem;
+  margin-top: -35px;
 }
 
 .header-content h1 {
@@ -258,20 +260,45 @@ header {
 }
 
 .scrollContainer p {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.05rem; /* Slightly larger for comfortable reading */
+  line-height: 1.75; /* Increased line spacing for readability */
   max-width: 35em;
   margin: 0 auto;
-  text-shadow: 2px 2px 4px rgba(22, 20, 20, 0.7);
+  color: #333333; /* Dark gray for a soft, professional tone */
+  font-family: "Georgia", serif; /* Elegant serif font for a classic look */
+  font-weight: 400; /* Normal weight for a balanced look */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Soft shadow for a subtle lift */
+  letter-spacing: 0.02em; /* Light letter spacing for readability */
+  padding: 0 1.2em; /* Added padding for a more balanced appearance */
 }
 
 .scrollText {
   margin: 50vh auto;
   max-width: 50rem;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.7);
-  color: #ffffff;
+  padding: 1.2rem 1.8rem; /* Reduced padding for a cleaner look */
+  background: rgba(255, 255, 255, 0.7); /* Light, frosted white background */
+  color: #333333; /* Dark gray text for a softer contrast */
+  border-radius: 8px; /* Subtle rounded edges */
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow for gentle depth */
+  backdrop-filter: blur(4px); /* Softer blur for a glassy, refined look */
+  border: 1px solid rgba(200, 200, 200, 0.3); /* Thinner, light gray border */
+  position: relative;
+  overflow: hidden;
+  opacity: 95%; /* Full opacity to avoid heaviness */
+  transition: all 0.3s ease; /* Smooth transition for any changes */
+  
 }
+
+/* Optional hover effect for a professional touch */
+.scrollText:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly enhanced shadow on hover */
+  transform: translateY(-2px); /* Subtle lift for interactivity */
+}
+
+
 
 #changingBg {
   background-size: cover;
@@ -449,11 +476,37 @@ img {
 footer {
   clear: both;
   text-align: center;
-  padding: 1rem 0;
-  background: #000000;
-  color: #ffffff;
+  padding: 1.5rem 0; /* Increased padding for a more spacious look */
+  background: #c7a175b6; /* Dark gray background for a softer contrast */
+  color: #ffffff; /* Light gray text color for readability */
   width: 100%;
+  font-size: 0.9rem; /* Slightly smaller font for subtlety */
+  border-top: 2px solid rgba(255, 255, 255, 0.1); /* Thin, subtle border for a polished look */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow to lift the footer */
+  font-family: "Arial", sans-serif;
 }
+
+/* Links within the footer for a clean, subtle effect */
+footer a {
+  color: #f1c40f; /* Soft golden color for contrast */
+  text-decoration: none;
+  margin: 0 0.8rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff; /* Brighter color on hover */
+}
+
+/* Optional: Make the footer text slightly more muted */
+footer p {
+  margin: 0.5rem 0;
+  color: #cccccc; /* Muted gray for softer text */
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 700px) {
