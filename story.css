@@ -1,0 +1,719 @@
+
+
+/* Soft, understated background for a professional reading experience */
+body {
+  font-family: "Arial", sans-serif;
+  font-size: 21px;
+  margin: 0 auto;
+  width: 60vh;
+  background: linear-gradient(135deg, #fdfcf9, #f7ebe1, #f1ded1, #e7cdbb);
+ 
+  background-attachment: fixed;
+  color: #2c3e50;
+  animation: gradientShift 25s ease infinite;
+}
+
+/* Very soft texture overlay to add a subtle sense of depth */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.03) 5px,
+    rgba(255, 255, 255, 0) 5px,
+    rgba(255, 255, 255, 0) 10px
+  );
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.5; /* Lower opacity for a softer texture effect */
+}
+
+/* Smooth, subtle animation for a calm gradient shift */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Fade-in effect for an elegant appearance */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  animation: fadeIn 1.5s ease, gradientShift 25s ease infinite;
+}
+
+/* Header background with overlay and centered content */
+header {
+  position: relative;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(pictures/martinluther.jpg);
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.45); /* Enhanced dark overlay for better contrast */
+  z-index: 1;
+}
+
+/* Container for all header content */
+.profile-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  width: 90%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Profile card design */
+.profile-card {
+  background-color: rgba(255, 255, 255, 0.95); /* Slight transparency for depth */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Larger shadow for more depth */
+  padding: 2.5rem;
+  max-width: 350px;
+  text-align: center;
+  color: #2c3e50;
+  backdrop-filter: blur(8px); /* Blurred background for a glass-like effect */
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for profile card */
+.profile-card:hover {
+  transform: translateY(-10px) scale(1.02); /* Slight lift and scale effect */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Profile image styling */
+.profile-image {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-top: 30px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 5px solid #f1c40f; /* Gold border for contrast */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for image */
+  transition: transform 0.3s ease;
+}
+
+/* Profile image hover effect */
+.profile-image:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Profile text styling */
+.name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info {
+  font-size: 1rem;
+  color: #7d8a92;
+  margin: 0.3rem 0;
+  font-style: italic;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* Header content (headline and CTA button) */
+.header-content {
+  max-width: 600px;
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 1rem;
+}
+
+.header-content h1 {
+  font-size: 2.2rem;
+  color: #ffffff;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Call-to-action button */
+.cta-button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #2c3e50;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Button shadow */
+}
+
+/* CTA button hover effect */
+.cta-button:hover {
+  background-color: #f1c40f; /* Gold background */
+  color: #2c3e50;
+  transform: scale(1.07); /* Slightly larger on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+}
+
+/* Responsive adjustments for different screens */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+  .profile-card {
+    max-width: 300px;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 1.5rem;
+  }
+  .profile-card {
+    padding: 1.5rem;
+  }
+}
+
+
+#topBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#topBtn:hover {
+  background-color: #555;
+}
+
+.bilde-info {
+  width: 300px;
+  padding: 20px;
+  background-color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.bilde-bilde {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.scrollContainer {
+ 
+  width: 60vh;
+  min-height: 60vh;
+  overflow: hidden;
+  transition: background-image 2s;
+}
+
+.scrollContainer p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 35em;
+  margin: 0 auto;
+  text-shadow: 2px 2px 4px rgba(22, 20, 20, 0.7);
+}
+
+.scrollText {
+  margin: 50vh auto;
+  max-width: 50rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+}
+
+#changingBg {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-bottom: 50vh;
+}
+
+#introduksjon {
+ 
+  background-image:url(pictures/art5.jpg);
+  background-attachment: fixed;
+  background-size: 200vh;
+  
+ 
+  background-position: center center;
+}
+
+.textSection {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.textSection p {
+  font-size: 1rem;
+  line-height: 2;
+  max-width: 35em;
+  margin: 0 auto;
+  padding-top: 2em;
+}
+
+main {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 10px auto;
+}
+
+#map {
+  height: 700px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+article {
+  border: 1px solid #5c5858;
+  background: #f3f3f3;
+  padding: 1.5rem;
+  margin-bottom: 5px;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  padding-top: 2em;
+}
+
+h2 {
+  font-size: 1.15rem;
+  color: #000;
+  padding-top: 2em;
+  text-align: center;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 10px 0;
+  border-radius: 5px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #f1c40f;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: auto;
+}
+
+.text-content {
+  padding: 20px;
+  overflow: hidden;
+  line-height: 1.6;
+  color: #000000;
+  max-width: 600px;
+  margin: auto;
+}
+
+.audio-container {
+  max-width: 400px;
+  margin: 20px;
+  text-align: center;
+}
+
+audio {
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border: 2px solid #000000;
+}
+
+.image-content {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.video-content {
+  max-width: 100%;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 56.25%;
+  background: rgb(0, 0, 0);
+}
+
+.video-content video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-style: italic;
+  color: rgb(0, 0, 0);
+  text-shadow: #ffffff 1px 1px;
+  text-align: center;
+  font-size: 15px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid #ddd;
+  border-radius: 8px;
+}
+
+.image-caption {
+  text-align: center;
+  font-style: italic;
+  padding-top: 1em;
+}
+
+footer {
+  clear: both;
+  text-align: center;
+  padding: 1rem 0;
+  background: #000000;
+  color: #ffffff;
+  width: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 700px) {
+  body {
+    width: 90vw;
+  }
+
+  header {
+    height: auto;
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  header a {
+    font-size: 0.9rem;
+  }
+
+  .bilde-info {
+    width: 90%;
+    margin: auto;
+  }
+
+  .scrollContainer {
+    width: 90vw;
+  }
+
+  .textSection,
+  .container,
+  .text-content {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .audio-container,
+  .image-content,
+  .video-content {
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+  .navigation {
+    flex-direction: column;
+    padding: 5px 0;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.8rem;
+  }
+
+  header a {
+    font-size: 0.8rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
+
+
+  .name{
+    color: white;
+  }
+/* Sidebar styling with elegant, neutral tones */
+/* Sidebar styling with warm, complementary tones */
+.unique-nav {
+  width: 260px;
+  background-color: #e8dcc2; /* Soft beige to complement body background */
+  color: #4a4a4a; /* Darker, warm gray text color for readability */
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15); /* Slight shadow for subtle depth */
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%); /* Hidden by default */
+  transition: transform 0.4s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar open state */
+.unique-nav.open {
+  transform: translateX(0); /* Slide in when open */
+}
+
+/* Responsive sidebar adjustments */
+@media (max-width: 768px) {
+  .unique-nav {
+      width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .unique-nav {
+      width: 200px;
+  }
+}
+
+/* Sidebar title with a warm accent color */
+.unique-nav h2 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #b08a6d; /* Warm brown accent color */
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #d2b8a3; /* Light warm border for subtle styling */
+  padding-bottom: 10px;
+}
+
+/* Close button with soft tones and hover effect */
+.unique-close-button {
+  background: #d2b8a3; /* Warm beige button background */
+  border: none;
+  color: #4a4a4a; /* Darker gray text */
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: auto;
+  align-self: center;
+}
+
+.unique-close-button:hover {
+  background-color: #b08a6d; /* Slightly richer color on hover */
+  color: #ffffff; /* White text for contrast on hover */
+}
+
+/* Open button styling */
+.unique-open-button {
+  position: fixed;
+  top: 10%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: #d2b8a3;
+  color: #4a4a4a;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 24px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 101;
+  transition: background-color 0.3s ease;
+}
+
+.unique-open-button.hidden {
+  display: none; /* Hide when sidebar is open */
+}
+
+.unique-open-button:hover {
+  background-color: #b08a6d;
+  color: #ffffff;
+}
+
+/* Chapter toggle button styling */
+.unique-toggle {
+  background: none;
+  border: none;
+  color: #4a4a4a;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 12px 0;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s ease;
+}
+
+.unique-toggle:hover {
+  background-color: rgba(208, 185, 162, 0.3); /* Warm beige hover effect */
+  color: #6b4e3d;
+}
+
+.unique-toggle::after {
+  content: "⮟";
+  font-size: 0.8em;
+  color: #b08a6d; /* Subtle arrow color */
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when active */
+.unique-toggle.active::after {
+  transform: rotate(180deg);
+}
+
+/* Subchapter list styling */
+.unique-subchapter {
+  list-style: none;
+  padding-left: 20px;
+  display: none;
+  transition: max-height 0.3s ease;
+}
+
+.unique-subchapter li a {
+  text-decoration: none;
+  color: #6b4e3d; /* Soft, warm brown for links */
+  font-size: 0.95em;
+  display: block;
+  padding: 6px 0;
+  border-left: 3px solid transparent;
+  transition: color 0.3s ease, border-left 0.3s ease;
+}
+
+.unique-subchapter li a:hover {
+  color: #4a4a4a; /* Darker color on hover */
+  border-left: 3px solid #b08a6d; /* Warm accent border */
+}
+
+/* Display subchapter when active */
+.unique-toggle.active + .unique-subchapter {
+  display: block;
+}
+
+/* Hide sidebar on small screens until open-menu is clicked */
+@media (max-width: 480px) {
+  .unique-nav {
+      transform: translateX(-100%);
+  }
+
+  .unique-nav.open {
+      transform: translateX(0);
+  }
+
+  @media (max-width: 480px) {
+    .unique-open-button {
+      opacity: 0.4; /* Make button transparent initially */
+    }
+  
+    .unique-open-button:hover {
+      opacity: 1; /* Solid opacity on hover */
+    }
+}
+}
