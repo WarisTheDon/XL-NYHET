@@ -241,3 +241,11 @@ function animateUp() {
 
 // Create the chart initially
 createChart();
+
+
+
+// Hide the loader after 4 seconds
+setTimeout(() => {
+  document.querySelector('.loader').classList.add('hidden');
+}, 4000);
+
