@@ -762,11 +762,24 @@ footer p {
 
   @media (max-width: 480px) {
     .unique-open-button {
-      opacity: 0.4; /* Make button transparent initially */
+      opacity: 0.8; /* Make button transparent initially */
     }
   
     .unique-open-button:hover {
       opacity: 1; /* Solid opacity on hover */
     }
 }
+}
+
+
+.chart-container {
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  
+  padding-top: 20px;
+}
+h2, p {
+  font-family: Arial, sans-serif;
 }

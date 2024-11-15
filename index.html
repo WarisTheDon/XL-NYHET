@@ -74,11 +74,11 @@
       </ol>
   </nav>
   <!-- Close button moved to the bottom -->
-  <button id="unique-close" class="unique-close-button">✖ Close Menu</button>
+  <button id="unique-close" class="unique-close-button">✖ Lukke Meny</button>
 </aside>
 
 <!-- Visible Open Button for Sidebar -->
-<button id="unique-open" class="unique-open-button">☰ Open Menu</button>
+<button id="unique-open" class="unique-open-button">☰</button>
 
 
 
@@ -227,15 +227,22 @@
          <br>
          En dag i uka, vanligvis fredag, tilbringer Martin i Fredrikstad for å jobbe med oppgaver knyttet til studentdemokratiet og for å delta i regionale møter. Denne dagen kan være hektisk, men han får også tid til å møte venner og nettverke med andre studenter på tvers av høgskolen. </p>
 
-        <div class="image-content">
-          <img src="pictures/diagrammartin.png" alt="liten bilde for text" />
-          <figcaption>
-            En diagram som viser hvordan Martin fordeler sin tid som studentleder.
-            
-                </figcaption>
-          <!-- Kilde til bilde:Martin Arthur sendte dette til meg da jeg intervjuet han-->
-        </div>
-
+       <!-- Styles -->
+<style>
+  #chartdiv {
+    width: 100%;
+    justify-content: center;
+    
+    height: 500px;
+  }
+  </style>
+  
+  <!-- Resources -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <div id="chartdiv"></div>
+  
 
       
 
@@ -300,11 +307,19 @@
       </h2>
       <p>
         Martins masteroppgave, som fikk karakteren A, fokuserte på en IoT-basert overvåking av jordbærdyrking. Ved å kombinere sensorer og maskinlæringsalgoritmer, utviklet han et system som hjelper bønder med å opprettholde optimale vekstforhold for innendørs jordbær. Oppgaven hans bidrar til bærekraftig landbruk og det grønne skiftet.
-        <div class="image-content">
-          <img src="pictures/masterA.png" alt="liten bilde for text" />
-          <p>Martins A-oppgave innen bærekraftig teknologi for jordbruk viser hvordan innovasjon kan bidra til det grønne skiftet</p>
-          <!-- Kilde til bilde:Martin Arthur sendte dette til meg da jeg intervjuet han-->
-        </div>
+           <!--Chart.js-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
+    <canvas id="gradeChart" width="600" height="400"></canvas>
+        <div class="chart-container">
+          <h2>Statistikk for ITI52020, 2024 VÅR, Masteroppgave og muntlig eksamen</h2>
+          <canvas id="gradeChart"></canvas>
+          <p>Din karakter: A <br> Gjennomsnittlig bestått karakter: B</p>
+      </div>
+
+
+
         <h2>Hvordan organiserte du arbeidet med oppgaven?</h2>
         <p>
           Jeg startet med en grundig planlegging og tidsplan. Jeg delte oppgaven inn i faser, som research, utvikling av systemet, testing og analyse.
