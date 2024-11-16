@@ -7,12 +7,49 @@ body {
   font-size: 21px;
   margin: 0 auto;
   width: 60vh;
-  background: linear-gradient(135deg, #fdfcf9, #f7ebe1, #f1ded1, #e7cdbb);
- 
+  background: linear-gradient(to bottom, 
+    #ffffff 0%,    /* Pure light at the top (Light's triumph) */
+    #d4d4d4 20%,   /* Fading brightness */
+    #808080 50%,   /* Balanced twilight (neutral ground) */
+    #3c3c3c 80%,   /* Darkness emerging */
+    #000000 100%   /* Absolute dark at the bottom (Dark's reign) */
+  );
   background-attachment: fixed;
-  color: #2c3e50;
-  animation: gradientShift 25s ease infinite;
+  color: #ffffff; /* Keep text light to contrast against darker tones */
+  animation: lightDarkBattle 10s ease infinite; /* Add dynamic movement */
 }
+
+/* Keyframes for dynamic battle effect */
+@keyframes lightDarkBattle {
+  0% {
+    background: linear-gradient(to bottom, 
+      #ffffff 0%, 
+      #d4d4d4 20%, 
+      #808080 50%, 
+      #3c3c3c 80%, 
+      #000000 100%
+    );
+  }
+  50% {
+    background: linear-gradient(to bottom, 
+      #000000 0%, 
+      #3c3c3c 20%, 
+      #808080 50%, 
+      #d4d4d4 80%, 
+      #ffffff 100%
+    );
+  }
+  100% {
+    background: linear-gradient(to bottom, 
+      #ffffff 0%, 
+      #d4d4d4 20%, 
+      #808080 50%, 
+      #3c3c3c 80%, 
+      #000000 100%
+    );
+  }
+}
+
 
 /* Very soft texture overlay to add a subtle sense of depth */
 body::before {
@@ -485,6 +522,40 @@ footer {
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow to lift the footer */
   font-family: "Arial", sans-serif;
 }
+
+#fremtiden {
+  position: relative;
+  background-image: url("pictures/art5_rotated_180.png");
+  background-attachment: fixed;
+  background-size: 200vh;
+  background-position: center center;
+  color: black;
+  font-family: "Georgia", serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+  padding: 20px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  opacity: 0.95;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+#fremtiden::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border: 2.5px solid black; /* Change border thickness and color as desired */
+  border-radius: 1px;
+  /* Fading effect for border */
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 15%);
+}
+
+
 
 /* Links within the footer for a clean, subtle effect */
 footer a {
