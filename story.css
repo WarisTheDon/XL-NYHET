@@ -939,3 +939,241 @@ h2, p {
   }
 }
 
+.dramatisktekst {
+  text-align: center; /* Sentraliserer teksten */
+  font-size: 2rem; /* Gjør teksten stor for å fange oppmerksomhet */
+  font-weight: bold; /* Gjør teksten sterk og fremtredende */
+  color: #d32f2f; /* Gjør teksten rød som standard */
+
+  margin: 500px 0; /* Gir god avstand mellom hver blokk */
+}
+
+.dramatisktekst p {
+  text-transform: uppercase; /* Gjør teksten dramatisk med store bokstaver */
+  letter-spacing: 2px; /* Øker mellomrommet mellom bokstavene */
+  line-height: 1.5; /* Gir god lesbarhet */
+  transition: transform 0.3s ease-in-out; /* Myk overgang for interaksjoner */
+}
+
+.dramatisktekst p:hover {
+  transform: scale(1.1); /* Forstørrer teksten for ekstra effekt ved hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes fadeToBlack {
+  0% {
+    color: transparent;
+    background: linear-gradient(90deg, #FFD700, #FFAA00); /* Start with gold */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 5px #FFD700, 
+                 0 0 10px #FFD700, 
+                 0 0 1px #FFAA00, 
+                 0 0 1px #FFAA00, 
+                 0 0 1px #FF8C00, 
+                 0 0 1px #FF8C00; /* Strong glow */
+  }
+  80% {
+    color: transparent;
+    background: linear-gradient(90deg, #FFD700, #FFAA00); /* Maintain gold glow */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 5px #FFD700, 
+                 0 0 10px #FFD700, 
+                 0 0 1px #FFAA00, 
+                 0 0 1px #FFAA00, 
+                 0 0 1px #FF8C00, 
+                 0 0 1px #FF8C00; /* Strong glow remains */
+  }
+  100% {
+    color: black; /* Fade to black */
+   
+    text-shadow: none; /* Remove the glow */
+  }
+}
+
+.dramatisktekstgoodnews p {
+ 
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  line-height: 1.6;
+  font-weight: bold;
+  font-size: 2rem;
+  background: linear-gradient(90deg, #FFD700, #FFAA00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin: 20px 0;
+
+  /* Glow Effect (with your preferred strength) */
+  text-shadow: 0 0 5px #FFD700, 
+               0 0 10px #FFD700, 
+               0 0 1px #FFAA00, 
+               0 0 1px #FFAA00, 
+               0 0 1px #FF8C00, 
+               0 0 1px #FF8C00;
+
+  /* Animation */
+  animation: fadeToBlack 5s ease-in-out forwards; /* Gradual fade to black */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  margin: 30px auto;
+  padding: 15px;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.timeline h1 {
+  text-align: center;
+  font-size: 2rem; /* Reduced font size for a cleaner look */
+  color: #ffcc00; /* Golden futuristic text */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Vertical line for the timeline */
+.timeline:before {
+  content: '';
+  position: absolute;
+  width: 2px; /* Slimmer line */
+  background: linear-gradient(to bottom, #ffcc00, #333);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+/* Each timeline item */
+.timeline-item {
+  margin: 15px 0; /* Tighter spacing */
+  position: relative;
+}
+
+/* Alternate item positioning */
+.timeline-item:nth-child(even) .content {
+  left: 50%;
+  text-align: left;
+  transform: translateX(15px);
+}
+
+.timeline-item:nth-child(odd) .content {
+  right: 50%;
+  text-align: right;
+  transform: translateX(-15px);
+}
+
+/* Milestone marker */
+.timeline-item:before {
+  content: '';
+  position: absolute;
+  width: 12px; /* Smaller marker */
+  height: 12px;
+  background: #ffcc00;
+  border: 2px solid #ffffff; /* Slimmer white border */
+  border-radius: 50%;
+  top: 10px; /* Adjusted for smaller spacing */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Styling for the content box */
+.timeline-item .content {
+  position: relative;
+  background: rgba(40, 40, 40, 0.95); /* Slightly lighter black */
+  padding: 15px; /* Reduced padding */
+  border-radius: 8px; /* Softer corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  max-width: 450px; /* Slightly narrower width */
+  font-size: 0.9rem; /* Adjusted font size */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.timeline-item .content:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(255, 204, 0, 0.5); /* Subtle glow effect */
+}
+
+/* Headings inside timeline content */
+.timeline-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem; /* Smaller heading */
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Paragraphs inside timeline content */
+.timeline-item p {
+  margin: 0;
+  font-size: 0.9rem; /* Reduced font size */
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline:before {
+    left: 20px;
+  }
+
+  .timeline-item:nth-child(even) .content,
+  .timeline-item:nth-child(odd) .content {
+    right: auto;
+    left: 50px;
+    text-align: left;
+    transform: translateX(0);
+  }
+
+  .timeline-item:before {
+    left: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline h1 {
+    font-size: 1.5rem; /* Reduced title size for smaller screens */
+  }
+
+  .timeline-item .content {
+    font-size: 0.85rem; /* Smaller font for compact view */
+  }
+
+  .timeline-item h3 {
+    font-size: 1rem;
+  }
+}
+
+
+
+
