@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Følg reisen til Martin Andersen</title>
     <link href="story.css" rel="stylesheet" media="all" />
-
+  
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -311,12 +311,15 @@
     height: 500px;
   }
   </style>
-  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Create a canvas for the chart -->
+  <canvas id="newPieChart" width="400" height="400"></canvas>
   <!-- Resources -->
   <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-  <div id="chartdiv"></div>
+  
   
 
       
@@ -365,13 +368,17 @@
     </section>
 
     <h1> <br>Kontoret til Martin og steder han har reist som studentleder for å representere Hiøf</h1>
-
     <main>
-    <section class="textSection" id="lokasjoner">
-    <main style="display: flex; gap: 1rem;">
-      <nav id="klubbkart" style="width: 30%; overflow-y: auto;"></nav>
-        <div id="map" style="width: 70%; height: 600px;"></div>
-</main>
+      <section class="textSection" id="lokasjoner">
+        <div class="mapContainer">
+          <nav id="klubbkart" class="mapSidebar">
+            <!-- Add any list or navigation items here -->
+          </nav>
+          <div id="map" class="mapCanvas"></div>
+        </div>
+      </section>
+    </main>
+    
 
     
 
@@ -394,7 +401,7 @@
         <div class="chart-container">
           <h2>Statistikk for ITI52020, 2024 VÅR, Masteroppgave og muntlig eksamen</h2>
           <canvas id="gradeChart"></canvas>
-          <p>Din karakter: A <br> Gjennomsnittlig bestått karakter: B</p>
+        
       </div>
 
 
@@ -417,51 +424,90 @@
           Jeg brukte omtrent seks måneder på selve oppgaven, fra idéfasen til innlevering. Dette inkluderte alt fra research, utvikling, testing, og skriving. I gjennomsnitt jobbet jeg 20–30 timer per uke, men i de siste ukene før innlevering brukte jeg gjerne over 40 timer i uka for å få alt på plass
         </p>
 
-        <div class="image-content">
-          <img src="pictures/skolerutine.jpg" alt="liten bilde for text" />
-          <p>Slik var en vanlig hverdag for Martin når han var student</p>
-          <!-- Kilde til bilde:Martin Arthur sendte dette til meg da jeg intervjuet han-->
+
+        <div class="routine-container">
+          <h2>Daglig Rutine</h2>
+          <div class="routine-grid">
+            <div class="routine-block">
+              <div class="time-circle">07:00</div>
+              <p>Våkner opp og spiser frokost</p>
+            </div>
+            <div class="routine-block">
+              <div class="time-circle">08:00</div>
+              <p>Drar på forelesning/skole</p>
+            </div>
+            <div class="routine-block">
+              <div class="time-circle">17:00</div>
+              <p>Kommer fra skole, spiser mat og slapper av</p>
+            </div>
+            <div class="routine-block">
+              <div class="time-circle">21:00</div>
+              <p>Jobber mer med skole før han legger seg</p>
+            </div>
+          </div>
         </div>
-      </section>
+        
+
+
 
       
         
-
-<section class="textSection" id="fremtiden">
-        <h2 > <br>  Fremtiden – Hva nå for Martin
-        </h2>
-
-        <p>
-          I en samtale med Martin Arthur Andersen spør vi hvordan han ser på veien videre etter suksessen som studentleder ved Høgskolen i Østfold. Martin reflekterer over hva som har vært viktig for ham, og hvilke mål han har satt seg for fremtiden.
-
-        </p>
-
-        <h2>Martin, du har oppnådd mye i rollen din som studentleder og gjennom utdanningen din. Hva ser du for deg videre?</h2>
-      
-        <p>Jeg har vært utrolig heldig som har fått så mye ansvar og så mange muligheter her på Høgskolen. Å få representere studentene, både lokalt og nasjonalt, har vært en stor læring. Jeg vil fortsette å jobbe med studentdemokrati og teknologi på en måte som kan påvirke samfunnet positivt
-        </p>
-        <h2>Så du ser for deg en karriere videre innenfor studentdemokrati og ledelse?</h2>
-        <p>"Kanskje! Jeg har alltid hatt et sterkt engasjement for å gi studenter en stemme, og jeg tror at studentdemokratiet har enda mer potensial. Samtidig er jeg veldig interessert i teknologi, og hvordan vi kan bruke det til å bedre studentopplevelsen. Så om mulighetene byr seg, kunne jeg tenke meg en rolle som kombinerer begge deler.
-        </p>
-         
-        <h2>Hva blir viktig for deg å oppnå i årene som kommer?</h2>
-        <p>Først og fremst ønsker jeg å være en ressurs og støtte for andre, slik mine veiledere og kollegaer har vært for meg. Jeg vil jobbe for å skape mer inkluderende miljøer i utdanningsinstitusjoner. Teknologi kan spille en stor rolle i dette, og jeg tror vi bare har sett starten på hva som er mulig å gjøre for studenter og utdanning.
-        </p>
-
-        <h2>Til slutt, har du noen råd til studenter som ser opp til deg og vurderer å bli med i studentdemokratiet?</h2>
-        <p>Det er fantastisk å kunne bidra! Mitt råd er å ikke være redd for å ta sjanser. Når du engasjerer deg, møter du så mange dyktige og inspirerende mennesker, og du lærer ting som ikke står i pensumbøkene. Og hvis du bryr deg om endring, er studentdemokratiet en god start.
-        </p>
-
-        <h2>En inspirerende vei videre</h2>
-        <p>Martins reise fra student til studentleder ved Høgskolen i Østfold viser hva engasjement og målrettet arbeid kan oppnå. Gjennom sin innsats har han ikke bare styrket studentmiljøet, men også inspirert andre til å engasjere seg. Nå, med sine erfaringer og ambisjoner, ser han frem til å bidra videre – både i studiemiljøet og i samfunnet for øvrig. Martins historie minner oss om at selv små skritt kan skape store forandringer.
-        </p>
-        <div class="image-content">
-          <audio controls autoplay>
-            <source src="pictures/konkurranse.mp3" type="audio/mp3">
-          </audio>
-            <p>En lydklipp fra Martin som forteller hvor han ser seg om 10år</p>
+      <section class="textSection" id="fremtiden">
+        <div class="scrollText">
+            <h2>Fremtiden – Hva nå for Martin?</h2>
+            <p>
+                Martins reise har vært alt annet enn enkel. Fra en stille barndom til å bli en stemme for andre, står han nå ved et veiskille. 
+            </p>
         </div>
-</section>
+        <div class="dramatisktekst">
+            <p>
+                Hva blir det neste?
+            </p>
+        </div>
+        <div class="scrollText">
+            <p>
+                Når vi spør Martin om hva fremtiden bringer, svarer han med et smil – men også med alvor. Han vet at suksess krever planlegging, men også vilje til å ta risiko.
+            </p>
+        </div>
+        <div class="scrollText">
+            <h2>Hva er neste steg?</h2>
+            <p>
+                "Jeg vil bygge videre på alt jeg har lært," sier Martin. "Teknologi og ledelse har alltid vært min lidenskap, og jeg ser for meg en rolle der jeg kan kombinere disse interessene for å skape noe som virkelig betyr noe."
+            </p>
+        </div>
+        <div class="dramatisktekst">
+            <p>
+                For Martin handler det om mer enn ambisjoner. Det handler om
+            </p>
+        </div>
+        <div class="dramatisktekstgoodnews">
+            <p>
+                <strong>innflytelse.</strong>
+            </p>
+        </div>
+        <div class="scrollText">
+            <p>
+                Han ønsker å gjøre en forskjell, ikke bare for seg selv, men for kommende generasjoner av studenter og samfunnsbyggere. "Studentdemokratiet har vist meg hvor mye kraft som ligger i samarbeid, og jeg vil bruke den kraften til å gjøre utdanning bedre for alle."
+            </p>
+        </div>
+        <div class="scrollText">
+            <h2>Har han noen råd til andre?</h2>
+            <p>
+                "Ikke vær redd for å feile," sier Martin bestemt. "Det er i feilene vi lærer mest. Og husk, ingen kan forandre verden alene. Samarbeid, lytt, og vær modig nok til å ta sjanser."
+            </p>
+        </div>
+        <div class="dramatisktekstgoodnews">
+            <p>
+                Fremtiden tilhører de som tør.
+            </p>
+        </div>
+        <div class="scrollText">
+            <p>
+                Martins historie minner oss om at selv de mest usynlige kan skinne når de finner sin lidenskap og retning. Veien videre er kanskje ukjent, men én ting er klart: Martin er klar for å fortsette å inspirere.
+            </p>
+        </div>
+    </section>
+    
   
 <main>
 

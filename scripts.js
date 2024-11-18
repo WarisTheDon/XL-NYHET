@@ -249,3 +249,59 @@ setTimeout(() => {
   document.querySelector('.loader').classList.add('hidden');
 }, 20);
 
+
+
+
+const data = {
+  labels: ["Arbeid som studentleder", "Reisetid", "Fritid"],
+  datasets: [
+    {
+      label: "Time Distribution",
+      data: [60, 20, 20], // Percentages
+      backgroundColor: ["#000000", "#444444", "#888888"], // Clear contrast between segments
+      hoverBackgroundColor: ["#222222", "#666666", "#aaaaaa"], // Lighter shades for hover effect
+      borderColor: "#ffffff", // White border for better separation
+      borderWidth: 3, // Thicker border for visibility
+    },
+  ],
+};
+
+// Options for the pie chart
+const options = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top", // Position of the legend
+      labels: {
+        color: "#ffffff", // White text for legend
+        font: {
+          size: 16, // Larger font size for better readability
+        },
+      },
+    },
+    tooltip: {
+      enabled: true, // Enable tooltips on hover
+      callbacks: {
+        label: function (context) {
+          const label = context.label || "";
+          const value = context.raw || 0;
+          return `${label}: ${value}%`; // Display percentage in the tooltip
+        },
+      },
+    },
+  },
+  layout: {
+    padding: {
+      top: 30,
+      bottom: 30,
+    },
+  },
+};
+
+// Create the pie chart
+const ctx1 = document.getElementById("newPieChart").getContext("2d");
+new Chart(ctx1, {
+  type: "pie", // Chart type
+  data: data,
+  options: options,
+});
